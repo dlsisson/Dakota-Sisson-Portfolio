@@ -1226,13 +1226,26 @@ body.nav-active .nav__list-item:nth-child(10) {
   max-width: 34rem;
 }
 
+#billboard .hero-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 #billboard .banner-header .hero-cta {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
+  display: inline-block;
+  width: auto;
+  margin: 0;
   background-color: #7a7f87;
   border-color: #7a7f87;
   color: #ffffff;
+}
+
+#billboard .banner-header .hero-resume-btn {
+  border: 2px solid #aeb4bd;
 }
 
 #billboard .banner-header .hero-cta:hover,
@@ -1268,10 +1281,25 @@ body.nav-active .nav__list-item:nth-child(10) {
     margin-bottom: 1.4rem;
   }
 
+  #billboard .hero-button-group {
+    justify-content: center;
+  }
+
   #billboard .hero-image {
     width: 100%;
     max-width: 100%;
     transform: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #billboard .banner-header {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #billboard .hero-button-group {
+    justify-content: center;
   }
 }
 
@@ -1478,16 +1506,19 @@ body.nav-active .nav__list-item:nth-child(10) {
   pointer-events: auto;
   width: 100%;
   max-width: 100%;
+  max-height: 78vh;
+  overflow-y: auto;
   margin-left: 0;
   transform: none;
 }
 
 @media screen and (min-width: 992px) {
   #portfolio .portfolio-item.is-active .case-study-details {
-    width: clamp(560px, 68vw, 980px);
-    max-width: calc(100vw - 32px);
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    max-height: 72vh;
+    margin-left: 0;
+    transform: none;
   }
 }
 
@@ -1950,6 +1981,25 @@ article.post-item {
   justify-content: space-between;
 }
 
+#testimonials .tech-stack-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: #f7f7f7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#testimonials .tech-stack-icon img,
+#testimonials .tech-stack-icon svg {
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
+}
+
 #testimonials .position-relative > .testimonial-nav {
   position: absolute;
   top: calc(50% - 22px);
@@ -1982,6 +2032,18 @@ article.post-item {
   #testimonials .testimonial-carousel {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  #testimonials .tech-stack-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 12px;
+  }
+
+  #testimonials .tech-stack-icon img,
+  #testimonials .tech-stack-icon svg {
+    width: 36px;
+    height: 36px;
   }
 
   #testimonials .position-relative > .testimonial-nav {

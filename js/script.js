@@ -110,6 +110,38 @@
       }
     });
 
+    var adobeSuiteIcons = [
+      {
+        src: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobephotoshop.svg",
+        alt: "Adobe Photoshop logo"
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobeillustrator.svg",
+        alt: "Adobe Illustrator logo"
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/simple-icons/icons/adobeindesign.svg",
+        alt: "Adobe InDesign logo"
+      }
+    ];
+
+    var adobeIconIndex = 0;
+    var updateAdobeSuiteIcons = function () {
+      var currentIcon = adobeSuiteIcons[adobeIconIndex];
+      var adobeLogoEls = document.querySelectorAll(".adobe-suite-logo");
+      adobeLogoEls.forEach(function (logoEl) {
+        logoEl.setAttribute("src", currentIcon.src);
+        logoEl.setAttribute("alt", currentIcon.alt);
+      });
+    };
+
+    testimonial_swiper.on("slideChangeTransitionStart", function () {
+      adobeIconIndex = (adobeIconIndex + 1) % adobeSuiteIcons.length;
+      updateAdobeSuiteIcons();
+    });
+
+    updateAdobeSuiteIcons();
+
     var clients_swiper = new Swiper(".clients-carousel", {
       slidesPerView: 5,
       spaceBetween: 30,
